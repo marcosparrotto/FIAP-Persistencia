@@ -22,7 +22,7 @@ import com.marcos.spring.repositories.ProductRepository;
 import com.marcos.spring.repositories.UserRepository;
 
 @Configuration
-@Profile("test")
+@Profile("dev")
 public class TestConfig implements CommandLineRunner{
 	
 	@Autowired
@@ -47,11 +47,11 @@ public class TestConfig implements CommandLineRunner{
 		Category cat2 = new Category(null, "Books");
 		Category cat3 = new Category(null, "Computers");
 		
-		Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
-		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
-		Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
-		Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
-		Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
+		Product p1 = new Product(null, "O Senhor dos Aneis 1", "A historia narra o conflito contra o mal que se alastra pela Terra-media", 90.5, "", 99);
+		Product p2 = new Product(null, "Smart TV", "TV Samsung 60polegadas", 2190.0, "", 50);
+		Product p3 = new Product(null, "Macbook Pro", "Notebook pratico, leve e perfeito pra acompanhar sua rotina", 1250.0, "", 25);
+		Product p4 = new Product(null, "PC Gamer", "Dell G7 Gamer", 1200.0, "", 25);
+		Product p5 = new Product(null, "Harry Potter e a pedra filosofal", "o primeiro dos sete livros da série de fantasia Harry Potter", 100.99, "", 75);
 		
 		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
@@ -65,8 +65,8 @@ public class TestConfig implements CommandLineRunner{
 		
 		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 		
-		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
-		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456");
+		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "Av Brasil, 1111");
+		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "Rua Bobos, 0");
 		
 		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), OrderStatus.PAID , u1);
 		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT , u2);
