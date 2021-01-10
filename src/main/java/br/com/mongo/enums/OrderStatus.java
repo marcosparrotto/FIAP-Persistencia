@@ -1,4 +1,4 @@
-package com.marcos.spring.entities.enums;
+package br.com.mongo.enums;
 
 public enum OrderStatus {
 	WAITING_PAYMENT(1),
