@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.mongo.enums.OrderStatus;
@@ -27,6 +28,7 @@ public class Order {
         this.orderStatus = status.getCode();
     }
 
+    @DBRef
     private List<Produto> produtos;
 
     public Order(Instant moment, OrderStatus orderStatus, List<Produto> produtos) {
